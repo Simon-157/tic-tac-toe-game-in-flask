@@ -1,18 +1,27 @@
 body{
     overflow: hidden;
-    background-color:#002bff;
+    background-color:rgba(25,25,75);
+    color: red;
+
+    >h2{
+        font-size:120%;
+    }
 
 }
 .container{
     display:flex;
+    flex-direction:column;
     width: 100vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    padding:5rem;      
+
+ 
+
 }
 table {
     border-collapse: collapse;
+    background-color: #fff;
 }
 td {
     border: 1px solid black;
@@ -38,7 +47,10 @@ td >div{
 
 
 
-.glow-on-hover {
+.glow-on-hover-btn {
+    margin-top:1rem;
+    font-weight:bold;
+    font-size:1rem;
     width: 220px;
     height: 50px;
     border: none;
