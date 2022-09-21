@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <link>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="../static/styles.css"></link>
+
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <table>
+            {% for i in range(3) %}
+                <tr>
+                    {% for j in range(3) %}
+                        <td>
+                            {% if game[i][j] != "_" %}
+                                {{ game[i][j] }}
+                            {% else %}
+                                <div><a href="{{ url_for('play', row=i, col=j) }}"><div>.</div></a></div>
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <form action="/reset" method="post">
+            <button type="submit"  class="glow-on-hover" >Reset Game</button>
+        </form>
+    </div>
+
+    </body>
+</html>
