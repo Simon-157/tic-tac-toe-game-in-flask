@@ -3,9 +3,8 @@ from flask import Flask, render_template, session, redirect, url_for, request
 from flask_session import Session
 from tempfile import mkdtemp
 
-from minimax import findBestMove
-from mini import TicTacToe
-from mini import minimax_decision
+from minimax import TicTacToe
+from minimax import minimax_decision
 from constants import BLANK
 
 app = Flask(__name__)
