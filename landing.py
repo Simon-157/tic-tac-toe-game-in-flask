@@ -3,14 +3,23 @@ from app import app
 
 def start_game(name):
     print("WELCOME " + name + ", TO THIS GAME!" + 2*"\n") 
-    platform = input('Enter CLI to play in the terminal or WEB to play on the web: ')
-    if platform == "CLI":
-        play_with_comp()
-    elif platform == "WEB":
-        app.run(debug=True)
+    flag = True
+    while flag:
+        platform = input('Enter CLI to play in the terminal or WEB to play on the web: ')
+        if platform.upper() == "CLI":
+            flag = False
+            play_with_comp(name)
+        elif platform.upper() == "WEB":
+            flag = False
+            app.run()
+
+        else:
+            print("Invalid platform!! Try again")
 
     return None
 
 print()
 name=input("Please Enter your name to start the game: ")
-start_game(name)
+if name !=" ":
+    start_game(name)
+    

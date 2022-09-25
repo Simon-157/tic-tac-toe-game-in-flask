@@ -54,7 +54,7 @@ def validate_input():
     return row, col
 
 
-def play_with_comp():
+def play_with_comp(player_name):
     """
     It's a function that plays a game of tic-tac-toe against the computer. 
     The computer is the X player and the human is the O player. 
@@ -91,6 +91,7 @@ def play_with_comp():
         elif player == O:
             choice = validate_input()
             row, col = choice[0], choice[1]
+            print(" \n {} chosed {} {}".format(player_name, row, col))
             if (grid[row][col] == BLANK):
                 grid[row][col] = player
                 player = X
@@ -100,7 +101,9 @@ def play_with_comp():
 # Checking if the game is over and if it is, it prints the winner.
     winner = game.winner(grid)
     if (winner != BLANK):
-        print("Congratulations",winner,"!")
+        if winner == O:
+            print("Congratulations",player_name,"you won !!")
+        print("Congratulations computer",winner,"won !!")
     else:
         print("It was a draw.")
 
