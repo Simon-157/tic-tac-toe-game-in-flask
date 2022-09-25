@@ -1,9 +1,11 @@
+# importing libraries
 import copy
 from datetime import timedelta
 from flask import Flask, render_template, session, redirect, url_for, request
 from flask_session import Session
 from tempfile import mkdtemp
 
+# import modules
 from game import TicTacToe
 from minimaxalgo import minimax_decision
 from constants import BLANK
@@ -38,7 +40,7 @@ def play(row, col):
             r, c= comp[0], comp[1]
             session["board"][r][c] = 'o'
             session["player"] = "x"
-        if session["player"] == "x":
+        elif session["player"] == "x":
             if session["board"][row][col] == BLANK:
                 session["board"][row][col] = 'x'
                 session["player"] = "o"
